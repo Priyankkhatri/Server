@@ -9,11 +9,15 @@ const users = [
 ];
 
 app.get("/", (req, res) => {
-  res.send("Server start ho chuka hai!!!!");
+  res.send("My name is Priyank");
+});
+app.get("/users/", (req, res) => {
+  res.status(200).json(users);
 });
 
-app.get("/users/test/:users_id", (req, res) => {
-    console.log("This is req", req);
+app.get("/user/:test/:users_id", (req, res) => {
+  console.log("this is req:", req.params);
+  console.log("this is req", req);
   res.status(200).json(users);
 });
 
